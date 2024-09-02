@@ -51,7 +51,7 @@ The data for this project was collected from official Premier League records.
 ### Tools Used
 - Power BI: For data visualization and dashboard creation.
   
-- Excel: For data collection and preprocessing (MANCHESTER CITY EPL 23-24.xlsx, containing matchday information, outcomes, goals scored, goals conceded, and more).
+- Excel: For data collection and preprocessing (MANCHESTER CITY EPL 23-24.xlsx), containing matchday information, outcomes, goals scored, goals conceded, and more).
 
 
 ### Conclusion
