@@ -3,7 +3,7 @@
 
 ### Introduction
 
-The Manchester City Premier League 2023/2024 Analysis project is a comprehensive Power BI dashboard that provides a detailed examination of the team's performance throughout the season. Leveraging various data visualizations, this project presents key insights into match outcomes, goal statistics, and comparative performance in home versus away games. Designed for fans, analysts, and coaching staff, the dashboard offers an intuitive and interactive way to explore Manchester City's journey in the EPL, making it easier to identify trends, strengths, and areas for improvement.
+The Manchester City Premier League 2023/2024 Analysis project is a comprehensive Power BI dashboard that provides a detailed examination of the team's performance throughout the season. As a Manchester City fan, I combined my passion for the team with my expertise in data analysis using Power BI to create an interactive and insightful dashboard. Leveraging various data visualizations, this project presents key insights into match outcomes, goal statistics, and comparative performance in home versus away games. Designed for fans, analysts, and coaching staff, the dashboard offers an intuitive and interactive way to explore Manchester City's journey in the EPL, making it easier to identify trends, strengths, and areas for improvement.
 
 
 ### Project Overview
@@ -19,6 +19,40 @@ The analysis focuses on the following KPIs:
 - Goal Difference: Tracks the cumulative goal difference over the course of the season.
 - Home vs. Away Performance: Compares the team's performance in home and away matches.
 - Opposition Analysis: Breaks down goals scored and conceded against each opponent.
+
+
+### DAX Analysis
+Below are some key DAX measures used in the dashboard:
+
+- Match Outcome Calculation:
+```dax
+Wins = COUNTROWS(FILTER('EPL', 'EPL'[OUTCOME] = "Win")) 
+Draws = COUNTROWS(FILTER('EPL', 'EPL'[OUTCOME] = "Draw"))
+Losses = COUNTROWS(FILTER('EPL', 'EPL'[OUTCOME] = "Lost"))
+```
+
+- Total Goals Scored:
+```dax
+Total Goals Scored = SUM('EPL'[GOAL_FORWARD])
+```
+
+- Total Goals Conceded:
+```dax
+Total Goals Conceded = SUM('EPL'[GOAL_AGAINST])
+```
+
+- Average Goals per Game:
+```dax
+Average Goals per Match = DIVIDE([Total Goals Scored], [Total Matches], 0) 
+```
+
+- Goal Difference:
+```dax
+Goal Difference = [Total Goals Scored] - [Total Goals Conceded]
+```
+
+
+
 
 
 ### Visualizations
@@ -42,6 +76,28 @@ Stacked Bar Chart: Comparing the results in home versus away games, filtered by 
 - Opposition Analysis
 Table/Matrix Visualization: Showing the goals scored and conceded against each opponent, with filters for specific matchdays or venues.
 
+
+
+![m c 1](https://github.com/user-attachments/assets/b88b5da3-ec7c-41ab-b56e-2e97c77a8af4)
+
+
+
+
+![m c 2](https://github.com/user-attachments/assets/764f6363-fa60-496a-88f1-bd3a9b2e2780)
+
+
+
+
+![m c 3](https://github.com/user-attachments/assets/46f8ea0a-2ac7-47e2-a6d4-cf5f7d9dca93)
+
+
+
+### Findings
+- Match Outcomes: Manchester City had a dominant season with a high percentage of wins compared to draws and losses.
+- Goals Scored vs. Conceded: The team consistently outperformed opponents, scoring more goals than they conceded in most matches, showcasing their offensive strength.
+- Home vs. Away Performance: Stronger performance was observed in home games compared to away matches, indicating the advantage of playing at the Etihad Stadium.
+- Goal Difference: Manchester City's positive goal difference increased progressively, reflecting their strong defense and attack.
+- Opposition Analysis: Certain opponents posed more challenges, but overall, the team performed exceptionally well across different matchdays.
 
 
 ### Data Source
